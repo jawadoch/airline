@@ -51,7 +51,7 @@ SELECT
     ff.ArrivalDelayInMinutes
 FROM 
     Airline.dbo.FlightFeedback ff
-    INNER JOIN flight.dbo.DimAnnees ye ON ff.Year = ye.Annee COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimAnnees ye ON ff.Year = ye.Annee
     INNER JOIN flight.dbo.DimSatisfaction s ON ff.Satisfaction COLLATE SQL_Latin1_General_CP1_CI_AS = s.Satisfaction COLLATE SQL_Latin1_General_CP1_CI_AS
     INNER JOIN flight.dbo.DimGenre g ON ff.Gender COLLATE SQL_Latin1_General_CP1_CI_AS = g.Genre COLLATE SQL_Latin1_General_CP1_CI_AS
     INNER JOIN flight.dbo.DimCustomerType ct ON ff.CustomerType COLLATE SQL_Latin1_General_CP1_CI_AS = ct.CustomerType COLLATE SQL_Latin1_General_CP1_CI_AS
