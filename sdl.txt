@@ -1,0 +1,71 @@
+INSERT INTO FactEvaluations (
+    Annee_ID,
+    Satisfaction_ID,
+    Genre_ID,
+    CustomerType_ID,
+    Age,
+    TypeOfTravel_ID,
+    Class_ID,
+    FlightDistance,
+    SeatComfort,
+    DepartureArrivalTimeConvenient_ID,
+    FoodAndDrink,
+    GateLocation_ID,
+    InflightWifiService_ID,
+    InflightEntertainment_ID,
+    OnlineSupport_ID,
+    EaseOfOnlineBooking_ID,
+    OnBoardService_ID,
+    LegRoomService_ID,
+    BaggageHandling_ID,
+    CheckinService_ID,
+    Cleanliness_ID,
+    OnlineBoarding_ID,
+    DepartureDelayInMinutes,
+    ArrivalDelayInMinutes
+)
+SELECT
+    ye.Annee_ID,
+    s.Satisfaction_ID,
+    g.Genre_ID,
+    ct.CustomerType_ID,
+    ff.Age,
+    tt.TypeOfTravel_ID,
+    c.Class_ID,
+    ff.FlightDistance,
+    ff.SeatComfort,
+    datc.DepartureArrivalTimeConvenient_ID,
+    ff.FoodAndDrink,
+    gl.GateLocation_ID,
+    iws.InflightWifiService_ID,
+    ie.InflightEntertainment_ID,
+    os.OnlineSupport_ID,
+    eob.EaseOfOnlineBooking_ID,
+    obs.OnBoardService_ID,
+    lrs.LegRoomService_ID,
+    bh.BaggageHandling_ID,
+    cs.CheckinService_ID,
+    cl.Cleanliness_ID,
+    ob.OnlineBoarding_ID,
+    ff.DepartureDelayInMinutes,
+    ff.ArrivalDelayInMinutes
+FROM 
+    Airline.dbo.FlightFeedback ff
+    INNER JOIN flight.dbo.DimAnnees ye ON ff.Year = ye.Annee
+    INNER JOIN flight.dbo.DimSatisfaction s ON ff.Satisfaction = s.Satisfaction
+    INNER JOIN flight.dbo.DimGenre g ON ff.Gender = g.Genre
+    INNER JOIN flight.dbo.DimCustomerType ct ON ff.CustomerType = ct.CustomerType
+    INNER JOIN flight.dbo.DimTypeOfTravel tt ON ff.TypeOfTravel = tt.TypeOfTravel
+    INNER JOIN flight.dbo.DimClass c ON ff.Class = c.Class
+    INNER JOIN flight.dbo.DimDepartureArrivalTimeConvenient datc ON ff.DepartureArrivalTimeConvenient = datc.DepartureArrivalTimeConvenient
+    INNER JOIN flight.dbo.DimGateLocation gl ON ff.GateLocation = gl.GateLocation
+    INNER JOIN flight.dbo.DimInflightWifiService iws ON ff.InflightWifiService = iws.InflightWifiService
+    INNER JOIN flight.dbo.DimInflightEntertainment ie ON ff.InflightEntertainment = ie.InflightEntertainment
+    INNER JOIN flight.dbo.DimOnlineSupport os ON ff.OnlineSupport = os.OnlineSupport
+    INNER JOIN flight.dbo.DimEaseOfOnlineBooking eob ON ff.EaseOfOnlineBooking = eob.EaseOfOnlineBooking
+    INNER JOIN flight.dbo.DimOnBoardService obs ON ff.OnBoardService = obs.OnBoardService
+    INNER JOIN flight.dbo.DimLegRoomService lrs ON ff.LegRoomService = lrs.LegRoomService
+    INNER JOIN flight.dbo.DimBaggageHandling bh ON ff.BaggageHandling = bh.BaggageHandling
+    INNER JOIN flight.dbo.DimCheckinService cs ON ff.CheckinService = cs.CheckinService
+    INNER JOIN flight.dbo.DimCleanliness cl ON ff.Cleanliness = cl.Cleanliness
+    INNER JOIN flight.dbo.DimOnlineBoarding ob ON ff.OnlineBoarding = ob.OnlineBoarding;
