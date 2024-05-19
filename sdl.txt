@@ -51,21 +51,21 @@ SELECT
     ff.ArrivalDelayInMinutes
 FROM 
     Airline.dbo.FlightFeedback ff
-    INNER JOIN flight.dbo.DimAnnees ye ON ff.Year = ye.Annee
-    INNER JOIN flight.dbo.DimSatisfaction s ON ff.Satisfaction = s.Satisfaction
-    INNER JOIN flight.dbo.DimGenre g ON ff.Gender = g.Genre
-    INNER JOIN flight.dbo.DimCustomerType ct ON ff.CustomerType = ct.CustomerType
-    INNER JOIN flight.dbo.DimTypeOfTravel tt ON ff.TypeOfTravel = tt.TypeOfTravel
-    INNER JOIN flight.dbo.DimClass c ON ff.Class = c.Class
-    INNER JOIN flight.dbo.DimDepartureArrivalTimeConvenient datc ON ff.DepartureArrivalTimeConvenient = datc.DepartureArrivalTimeConvenient
-    INNER JOIN flight.dbo.DimGateLocation gl ON ff.GateLocation = gl.GateLocation
-    INNER JOIN flight.dbo.DimInflightWifiService iws ON ff.InflightWifiService = iws.InflightWifiService
-    INNER JOIN flight.dbo.DimInflightEntertainment ie ON ff.InflightEntertainment = ie.InflightEntertainment
-    INNER JOIN flight.dbo.DimOnlineSupport os ON ff.OnlineSupport = os.OnlineSupport
-    INNER JOIN flight.dbo.DimEaseOfOnlineBooking eob ON ff.EaseOfOnlineBooking = eob.EaseOfOnlineBooking
-    INNER JOIN flight.dbo.DimOnBoardService obs ON ff.OnBoardService = obs.OnBoardService
-    INNER JOIN flight.dbo.DimLegRoomService lrs ON ff.LegRoomService = lrs.LegRoomService
-    INNER JOIN flight.dbo.DimBaggageHandling bh ON ff.BaggageHandling = bh.BaggageHandling
-    INNER JOIN flight.dbo.DimCheckinService cs ON ff.CheckinService = cs.CheckinService
-    INNER JOIN flight.dbo.DimCleanliness cl ON ff.Cleanliness = cl.Cleanliness
-    INNER JOIN flight.dbo.DimOnlineBoarding ob ON ff.OnlineBoarding = ob.OnlineBoarding;
+    INNER JOIN flight.dbo.DimAnnees ye ON ff.Year = ye.Annee COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimSatisfaction s ON ff.Satisfaction COLLATE SQL_Latin1_General_CP1_CI_AS = s.Satisfaction COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimGenre g ON ff.Gender COLLATE SQL_Latin1_General_CP1_CI_AS = g.Genre COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimCustomerType ct ON ff.CustomerType COLLATE SQL_Latin1_General_CP1_CI_AS = ct.CustomerType COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimTypeOfTravel tt ON ff.TypeOfTravel COLLATE SQL_Latin1_General_CP1_CI_AS = tt.TypeOfTravel COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimClass c ON ff.Class COLLATE SQL_Latin1_General_CP1_CI_AS = c.Class COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimDepartureArrivalTimeConvenient datc ON ff.DepartureArrivalTimeConvenient COLLATE SQL_Latin1_General_CP1_CI_AS = datc.DepartureArrivalTimeConvenient COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimGateLocation gl ON ff.GateLocation COLLATE SQL_Latin1_General_CP1_CI_AS = gl.GateLocation COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimInflightWifiService iws ON ff.InflightWifiService COLLATE SQL_Latin1_General_CP1_CI_AS = iws.InflightWifiService COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimInflightEntertainment ie ON ff.InflightEntertainment COLLATE SQL_Latin1_General_CP1_CI_AS = ie.InflightEntertainment COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimOnlineSupport os ON ff.OnlineSupport COLLATE SQL_Latin1_General_CP1_CI_AS = os.OnlineSupport COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimEaseOfOnlineBooking eob ON ff.EaseOfOnlineBooking COLLATE SQL_Latin1_General_CP1_CI_AS = eob.EaseOfOnlineBooking COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimOnBoardService obs ON ff.OnBoardService COLLATE SQL_Latin1_General_CP1_CI_AS = obs.OnBoardService COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimLegRoomService lrs ON ff.LegRoomService COLLATE SQL_Latin1_General_CP1_CI_AS = lrs.LegRoomService COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimBaggageHandling bh ON ff.BaggageHandling COLLATE SQL_Latin1_General_CP1_CI_AS = bh.BaggageHandling COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimCheckinService cs ON ff.CheckinService COLLATE SQL_Latin1_General_CP1_CI_AS = cs.CheckinService COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimCleanliness cl ON ff.Cleanliness COLLATE SQL_Latin1_General_CP1_CI_AS = cl.Cleanliness COLLATE SQL_Latin1_General_CP1_CI_AS
+    INNER JOIN flight.dbo.DimOnlineBoarding ob ON ff.OnlineBoarding COLLATE SQL_Latin1_General_CP1_CI_AS = ob.OnlineBoarding COLLATE SQL_Latin1_General_CP1_CI_AS;
